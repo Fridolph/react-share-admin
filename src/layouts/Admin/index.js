@@ -1,13 +1,17 @@
-import React, {Component} from 'react'
-import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd'
+import React, { Component } from 'react'
+import { Layout, Menu, Breadcrumb, Icon } from 'antd'
 import menuConfig from '../../config/menuConfig'
 import './style.less'
-import AdminHeader from '../AdminHeader'
-import AdminFooter from '../AdminFooter'
+import {Switch, Route, Link, Redirect} from 'react-router-dom'
+import RouterSider from './RouterSider'
+import Header from './Header'
+import Footer from './Footer'
 import UtilDate from '../../utils/date'
+import PageHome from '../../views/Home'
+import PageButtons from '../../views/Buttons'
 
-const { Content, Sider } = Layout
-const SubMenu = Menu.SubMenu
+const { Content } = Layout
+const {SubMenu} = Menu
 
 export default class Admin extends Component {
   state = {
@@ -32,10 +36,12 @@ export default class Admin extends Component {
       } else {
         return (
           <Menu.Item key={item.title}>
-            {item.icon ? <Icon type={item.icon} /> : null}
-            <span className={this.state.collapsed ? 'hidden' : ''}>
-              {item.title}
-            </span>
+            <Link to={item.location}>
+              {item.icon ? <Icon type={item.icon} /> : null}
+              <span className={this.state.collapsed ? 'hidden' : ''}>
+                {item.title}
+              </span>
+            </Link>
           </Menu.Item>
         )
       }
@@ -51,35 +57,28 @@ export default class Admin extends Component {
       this.setState({
         systemTime
       })
-    })
+    }, 1000)
   }
 
   render() {
-    const {username, systemTime} = this.state
+    const {username, systemTime, collapsed, menuTreeNode} = this.state
 
     return (
       <Layout style={{minHeight: '100vh'}}>
-        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-          <div className="main-side-logo">
-            <img src="/assets/logo-ant.svg"  alt="logo" />
-            <h1 className={this.state.collapsed ? 'hidden' : ''}>Imooc ms</h1>
-          </div>
-
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            {this.state.menuTreeNode}
-          </Menu>
-        </Sider>
+        <RouterSider onCollapse={this.onCollapse} collapsed={collapsed} menuTreeNode={menuTreeNode} />
 
         <Layout>
-          <AdminHeader username={username} systemTime={systemTime} />
+          <Header username={username} systemTime={systemTime} />
 
           <Content style={{ margin: '24px 16px 0' }}>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-              content
-            </div>
+            <Switch>
+              <Route exact path="/" render={() => (<Redirect to="/admin/home" />)} />
+              <Route path="/admin/home" component={PageHome} />
+              <Route path="/admin/ui/buttons" component={PageButtons} />
+            </Switch>
           </Content>
 
-          <AdminFooter />
+          <Footer />
         </Layout>
       </Layout>
     )

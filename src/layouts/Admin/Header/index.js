@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Layout} from 'antd'
 import './style.less'
-import Axios from '../../utils/request'
+import Axios from '../../../utils/request'
 
 const { Header } = Layout
 
@@ -38,7 +38,7 @@ export default class AdminHeader extends Component {
       <Header className="admin-header">
         <div className="header-info">
           <span className="welcome">欢迎, {this.props.username}</span>
-          <a className="login-state" href="#">退出</a>
+          <a className="login-state" href="/">退出</a>
         </div>
         <div className="header-detail">
           <b className="title">首页</b>
