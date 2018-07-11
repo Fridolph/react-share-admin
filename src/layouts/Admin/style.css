@@ -1,0 +1,22 @@
+.main-side-logo {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  text-align: center;
+  height: 100px;
+  line-height: 84px;
+}
+.main-side-logo img,
+.main-side-logo h1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.main-side-logo img {
+  width: 50px;
+}
+.main-side-logo h1 {
+  color: white;
+  margin: 0 0 0 6px;
+}
+.main-side-logo .hidden {
+  display: none;
+}

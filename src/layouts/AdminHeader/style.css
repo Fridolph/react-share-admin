@@ -1,0 +1,37 @@
+.admin-header {
+  background: #fff;
+  padding: 0;
+  height: 100px;
+}
+.admin-header .header-info {
+  float: right;
+  height: 40px;
+  line-height: 40px;
+}
+.admin-header .header-detail {
+  position: relative;
+  margin-top: 40px;
+  padding: 0 20px;
+  border-top: 1px solid #f9c700;
+  height: 60px;
+  line-height: 60px;
+}
+.admin-header .header-detail .text {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+.admin-header .header-detail .text img {
+  height: 20px;
+  margin-top: -2px;
+  margin-right: 10px;
+}
+.admin-header .header-detail .date {
+  margin-right: 15px;
+}
+.admin-header .welcome {
+  margin-right: 10px;
+}
+.admin-header .login-state {
+  padding: 0 20px;
+}
