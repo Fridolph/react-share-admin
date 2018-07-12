@@ -1,0 +1,7 @@
+.base-page {
+  padding: 24px;
+  min-height: 360px;
+}
+.base-page .ant-card {
+  margin-bottom: 10px;
+}

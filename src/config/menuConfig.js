@@ -19,9 +19,9 @@ export default [
         location: '/admin/ui/modals'
       },
       {
-        title: 'loading',
-        icon: 'loading',
-        location: '/admin/ui/loading'
+        title: 'Steps',
+        icon: 'right-square-o',
+        location: '/admin/ui/steps'
       }
     ]
   },
@@ -70,26 +70,26 @@ export default [
   {
     title: '订单管理',
     icon: 'solution',
-    location: '/admin/richtext'
+    location: '/admin/order'
   },
   {
     title: '员工管理',
     icon: 'smile-o',
-    location: '/admin/richtext'
+    location: '/admin/staff'
   },
   {
     title: '车辆地图',
     icon: 'environment',
-    location: '/admin/richtext'
+    location: '/admin/map'
   },
   {
-    title: '图标',
-    icon: 'info-circle-o',
-    location: '/admin/richtext'
+    title: '图表',
+    icon: 'area-chart',
+    location: '/admin/chart'
   },
   {
     title: '权限设置',
     icon: 'lock',
-    location: '/admin/richtext'
+    location: '/admin/controll'
   }
 ]
