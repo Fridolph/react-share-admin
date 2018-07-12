@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Breadcrumb, Icon } from 'antd'
+import { Layout, Menu, Icon } from 'antd'
 import menuConfig from '../../config/menuConfig'
 import './style.less'
-import {Switch, Route, Link, Redirect} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import RouterSider from './RouterSider'
 import Header from './Header'
 import Footer from './Footer'
 import UtilDate from '../../utils/date'
-import PageHome from '../../views/Home'
-import PageButtons from '../../views/Buttons'
 
 const { Content } = Layout
 const {SubMenu} = Menu
@@ -29,19 +27,19 @@ export default class Admin extends Component {
     return data.map((item, idx) => {
       if (item.children) {
         return (
-          <SubMenu title={<span><Icon type={item.icon}/><span className={this.state.collapsed ? 'hidden' : ''}>{item.title}</span></span>} key={item.key + '-' + idx}>
+          <SubMenu title={<span><Icon type={item.icon}/><span className={this.state.collapsed ? 'text-hidden' : ''}>{item.title}</span></span>} key={item.key + '-' + idx}>
             {this.renderMenu(item.children)}
           </SubMenu>
         )
       } else {
         return (
           <Menu.Item key={item.title}>
-            <Link to={item.location}>
+            <NavLink to={item.location}>
               {item.icon ? <Icon type={item.icon} /> : null}
-              <span className={this.state.collapsed ? 'hidden' : ''}>
+              <span className={this.state.collapsed ? 'text-hidden' : ''}>
                 {item.title}
               </span>
-            </Link>
+            </NavLink>
           </Menu.Item>
         )
       }
@@ -71,11 +69,7 @@ export default class Admin extends Component {
           <Header username={username} systemTime={systemTime} />
 
           <Content style={{ margin: '24px 16px 0' }}>
-            <Switch>
-              <Route exact path="/" render={() => (<Redirect to="/admin/home" />)} />
-              <Route path="/admin/home" component={PageHome} />
-              <Route path="/admin/ui/buttons" component={PageButtons} />
-            </Switch>
+            {this.props.children}
           </Content>
 
           <Footer />

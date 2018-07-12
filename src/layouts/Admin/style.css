@@ -4,6 +4,7 @@
   text-align: center;
   height: 100px;
   line-height: 84px;
+  overflow: hidden;
 }
 .main-side-logo img,
 .main-side-logo h1 {
@@ -16,7 +17,12 @@
 .main-side-logo h1 {
   color: white;
   margin: 0 0 0 6px;
+  transition: all 0.4s 0.2s ease-in-out;
 }
 .main-side-logo .hidden {
-  display: none;
+  opacity: 0;
+}
+.main-side-logo .text-hidden {
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 }
