@@ -1,0 +1,9 @@
+.page-affix .scrollable-container {
+  height: 200px;
+  overflow-y: scroll;
+}
+.page-affix .scrollable-container .background {
+  padding-top: 100px;
+  height: 500px;
+  background-image: url('https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg');
+}
