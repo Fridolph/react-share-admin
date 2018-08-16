@@ -1,6 +1,6 @@
 .base-page {
   padding: 24px;
-  min-height: 360px;
+  min-height: calc(-94vh);
 }
 .base-page .ant-card {
   margin-bottom: 10px;

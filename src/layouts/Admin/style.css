@@ -1,5 +1,5 @@
 .main-side-logo {
-  background: rgba(255, 255, 255, 0.2);
+  background: #002140;
   padding: 8px;
   text-align: center;
   height: 100px;
@@ -20,9 +20,8 @@
   transition: all 0.4s 0.2s ease-in-out;
 }
 .main-side-logo .hidden {
-  opacity: 0;
+  display: none;
 }
 .main-side-logo .text-hidden {
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
+  display: none;
 }
