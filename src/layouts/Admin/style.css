@@ -25,3 +25,6 @@
 .main-side-logo .text-hidden {
   display: none;
 }
+.common-table-wrapper {
+  background: #fff;
+}

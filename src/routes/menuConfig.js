@@ -5,12 +5,12 @@ const menuConfig = [
     icon: 'home',
     location: '/admin/home'
   },
-  {
-    key: '1',
-    title: 'Module',
-    icon: 'layout',
-    location: '/admin/module'
-  },
+  // {
+  //   key: '1',
+  //   title: 'Module',
+  //   icon: 'layout',
+  //   location: '/admin/module'
+  // },
   {
     key: '2',
     title: 'Antd UI',
